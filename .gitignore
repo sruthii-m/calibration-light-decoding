@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# uv
+.python-version.bak
+
+# Raw and processed data (never commit)
+data/raw/**
+data/processed/**
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Model checkpoints and evaluation artifacts (never commit)
+artifacts/checkpoints/**
+artifacts/results/**
+artifacts/figures/**
+!artifacts/checkpoints/.gitkeep
+!artifacts/results/.gitkeep
+!artifacts/figures/.gitkeep
+
+# MNE downloads (mirrors ~/mne_data if pointed at the project)
+mne_data/
+
+# OS
+.DS_Store

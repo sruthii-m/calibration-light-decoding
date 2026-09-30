@@ -1,0 +1,43 @@
+[project]
+name = "calm"
+version = "0.1.0"
+description = "CALM: Calibration-Light Motor BCI — self-supervised EEG representation learning for motor imagery"
+readme = "README.md"
+authors = [
+    { name = "sruthi", email = "sruthi.medepalli@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "mne>=1.7",
+    "numpy>=1.26",
+    "scipy>=1.13",
+    "pandas>=2.2",
+    "scikit-learn>=1.5",
+    "matplotlib>=3.9",
+    "seaborn>=0.13",
+    "pyyaml>=6.0",
+    "torch>=2.14.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[project.scripts]
+calm = "calm.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
